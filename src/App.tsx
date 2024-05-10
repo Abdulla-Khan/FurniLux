@@ -19,6 +19,7 @@ import sofaProduct from "./images/sofa-product.jpeg";
 import tableProduct from "./images/table-product.jpeg";
 import chairProduct from "./images/chair-product.jpeg";
 import quoteBannerImage from "./images/quote-banner.png";
+import { FaStar } from "react-icons/fa";
 
 let saleBannerColorList = ["yellow", "black", "green"];
 let elevationProductsList = [
@@ -69,26 +70,26 @@ let collectionsList = [
   },
 ];
 
-let allProductsList = [
-  {
-    name: "Comfortable Sofa",
-    image: sofaProduct,
-    colors: ["black", "yellow", "brown", "grey"],
-    price: "$80.99",
-  },
-  {
-    name: "Elegant Side Table",
-    image: tableProduct,
-    colors: ["black", "yellow", "brown", "grey"],
-    price: "$80.99",
-  },
-  {
-    name: "Classy Padded Chair",
-    image: chairProduct,
-    colors: ["black", "yellow", "brown", "grey"],
-    price: "$80.99",
-  },
-];
+// let allProductsList = [
+//   {
+//     name: "Comfortable Sofa",
+//     image: sofaProduct,
+//     colors: ["black", "yellow", "brown", "grey"],
+//     price: "$80.99",
+//   },
+//   {
+//     name: "Elegant Side Table",
+//     image: tableProduct,
+//     colors: ["black", "yellow", "brown", "grey"],
+//     price: "$80.99",
+//   },
+//   {
+//     name: "Classy Padded Chair",
+//     image: chairProduct,
+//     colors: ["black", "yellow", "brown", "grey"],
+//     price: "$80.99",
+//   },
+// ];
 
 function App() {
   return (
@@ -258,7 +259,7 @@ function App() {
             zIndex: 1,
             position: "absolute",
             right: "6%",
-            top: "180%",
+            top: "177.5%",
           }}
           alt=""
         />
@@ -447,31 +448,49 @@ function App() {
           </Card.Body>
         </Card>
       ))}
-      <div className="sale-banner" style={{}}>
+      <div className="review-banner">
         <img
           src={quoteBannerImage}
           style={{
             float: "right",
-            height: "110%",
+            height: "100%",
           }}
           alt=""
         />
-
-        <p
-          style={{
-            fontSize: "1.5em",
-          }}
-          className="sale-banner-text"
-        >
-          <br />
-          <br />
+        <p style={{}} className="review-banner-text">
           <br /> "Incredibly happy with my new sofa!
           <br /> Stylish, comfortable, and exceeded my
           <br /> expectations. Seamless purchase and
           <br /> prompt delivery. Highly recommend!"
-          <p className="sale-banner-price">Marie Elisa</p>
         </p>
+        <p className="review-banner-name">Marie Elisa</p>
+        <div className="review-banner-card">
+          <img className="review-banner-card-image" src={chairProduct} alt="" />
+          <p className="review-banner-card-text">
+            Stylish Chair
+            <br />
+            $99.99
+            <br />
+            <span className="rating-icons">
+              {[...Array(5)].map((i) => (
+                <FaStar key={i} />
+              ))}
+            </span>
+          </p>
+        </div>
       </div>
+      <h2 className="elevation-text" >Blogs & Insights</h2>
+      <p
+        style={{
+          textAlign: "center",
+          fontSize: "1rem",
+          color:"#476C67",
+        }}
+      >
+        Explore Our Blog for Design Inspiration and Tips
+      </p>
+
+      <br />
     </>
   );
 }
