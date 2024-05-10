@@ -70,33 +70,32 @@ let collectionsList = [
   },
 ];
 
-// let allProductsList = [
-//   {
-//     name: "Comfortable Sofa",
-//     image: sofaProduct,
-//     colors: ["black", "yellow", "brown", "grey"],
-//     price: "$80.99",
-//   },
-//   {
-//     name: "Elegant Side Table",
-//     image: tableProduct,
-//     colors: ["black", "yellow", "brown", "grey"],
-//     price: "$80.99",
-//   },
-//   {
-//     name: "Classy Padded Chair",
-//     image: chairProduct,
-//     colors: ["black", "yellow", "brown", "grey"],
-//     price: "$80.99",
-//   },
-// ];
+let allProductsList = [
+  {
+    name: "Comfortable Sofa",
+    image: sofaProduct,
+    colors: ["black", "yellow", "brown", "grey"],
+    price: "$80.99",
+  },
+  {
+    name: "Elegant Side Table",
+    image: tableProduct,
+    colors: ["black", "yellow", "brown", "grey"],
+    price: "$80.99",
+  },
+  {
+    name: "Classy Padded Chair",
+    image: chairProduct,
+    colors: ["black", "yellow", "brown", "grey"],
+    price: "$80.99",
+  },
+];
 
 function App() {
   return (
     <>
       <div className="promotion">
         <BiSolidBellRing className="bell-icon" />
-        {/* <FontAwesomeIcon icon="fa-thin fa-bell-ring" /> */}
         Enjoy 30% off - Shop Now and Save Big!
       </div>
       <Navbar collapseOnSelect expand="lg">
@@ -189,80 +188,68 @@ function App() {
       <h2 className="elevation-text">Elevate Your Living Room</h2>
       <br />
       <br />
-      {elevationProductsList.map((product, index) => (
-        <Card
-          style={
-            index === 0
-              ? {
-                  width: "18rem",
-                  display: "inline-block",
-                  marginRight: "2%",
-                  marginLeft: "20%",
-                }
-              : {
-                  width: "18rem",
-                  display: "inline-block",
-                  marginRight: "2%",
-                }
-          }
-        >
-          <Card.Img
-            variant="top"
-            style={{
-              height: "300px",
-            }}
-            src={product.image}
-          />
-          <Card.Body>
-            <div
+      <div className="container">
+        {elevationProductsList.map((product, index) => (
+          <Card
+            style={
+              index === 0
+                ? {
+                    width: "18rem",
+                    display: "inline-block",
+                    margin: 5,
+                  }
+                : {
+                    width: "18rem",
+                    display: "inline-block",
+                    margin: 5,
+                  }
+            }
+          >
+            <Card.Img
+              variant="top"
               style={{
-                display: "flex",
-                alignItems: "center",
+                height: "300px",
               }}
-            >
-              {product.colors.map((color) => (
-                <div
-                  className="numberCircle"
-                  style={{
-                    backgroundColor: color,
-                  }}
-                ></div>
-              ))}
-            </div>
-            <TiShoppingCart
-              style={{
-                float: "right",
-              }}
+              src={product.image}
             />
-            <h6>{product.name}</h6>
-            <h6>{product.price}</h6>
-          </Card.Body>
-        </Card>
-      ))}
-
+            <Card.Body>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                {product.colors.map((color) => (
+                  <div
+                    className="numberCircle"
+                    style={{
+                      backgroundColor: color,
+                    }}
+                  ></div>
+                ))}
+              </div>
+              <TiShoppingCart
+                style={{
+                  float: "right",
+                }}
+              />
+              <h6>{product.name}</h6>
+              <h6>{product.price}</h6>
+            </Card.Body>
+          </Card>
+        ))}
+      </div>
       <div className="sale-banner" style={{}}>
-        <h1
-          style={{
-            position: "relative",
-            zIndex: 0,
-            float: "right",
-            color: "#475c5a",
-            fontWeight: "bold",
-            fontSize: "3em",
-          }}
-        >
-          Sale 30%
-        </h1>
         <img
           src={saleBannerImage}
           style={{
+            float: "right",
             zIndex: 1,
-            position: "absolute",
-            right: "6%",
-            top: "177.5%",
+            position: "relative",
           }}
           alt=""
         />
+
         <h2 className="sale-banner-head">Luxurious Bed</h2>
         <p className="sale-banner-text">
           Discover unparallel comfort with our
@@ -295,159 +282,160 @@ function App() {
       <h2 className="elevation-text">All Products</h2>
       <br />
       <br />
-      {elevationProductsList.map((product, index) => (
-        <Card
-          style={
-            index === 0 || index === 3
-              ? {
-                  width: "18rem",
-                  display: "inline-block",
-                  marginRight: "2%",
-                  marginLeft: "20%",
-                }
-              : {
-                  width: "18rem",
-                  display: "inline-block",
-                  marginRight: "2%",
-                  marginBottom: "2%",
-                }
-          }
-        >
-          <Card.Img
-            variant="top"
-            style={{
-              height: "300px",
-            }}
-            src={product.image}
-          />
-          <Card.Body>
-            <div
+      <div className="container">
+        {elevationProductsList.map((product, index) => (
+          <Card
+            style={
+              index === 0 || index === 3
+                ? {
+                    width: "18rem",
+                    display: "inline-block",
+                    margin: 5,
+                  }
+                : {
+                    width: "18rem",
+                    display: "inline-block",
+                    margin: 5,
+                  }
+            }
+          >
+            <Card.Img
+              variant="top"
               style={{
-                display: "flex",
-                alignItems: "center",
+                height: "300px",
               }}
-            >
-              {product.colors.map((color) => (
-                <div
-                  className="numberCircle"
-                  style={{
-                    backgroundColor: color,
-                  }}
-                ></div>
-              ))}
-            </div>
-            <TiShoppingCart
-              style={{
-                float: "right",
-              }}
+              src={product.image}
             />
-            <h6>{product.name}</h6>
-            <h6>{product.price}</h6>
-          </Card.Body>
-        </Card>
-      ))}
-      {elevationProductsList.map((product, index) => (
-        <Card
-          style={
-            index === 0 || index === 3
-              ? {
-                  width: "18rem",
-                  display: "inline-block",
-                  marginRight: "2%",
-                  marginLeft: "20%",
-                }
-              : {
-                  width: "18rem",
-                  display: "inline-block",
-                  marginRight: "2%",
-                  marginBottom: "2%",
-                }
-          }
-        >
-          <Card.Img
-            variant="top"
-            style={{
-              height: "300px",
-            }}
-            src={product.image}
-          />
-          <Card.Body>
-            <div
+            <Card.Body>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                {product.colors.map((color) => (
+                  <div
+                    className="numberCircle"
+                    style={{
+                      backgroundColor: color,
+                    }}
+                  ></div>
+                ))}
+              </div>
+              <TiShoppingCart
+                style={{
+                  float: "right",
+                }}
+              />
+              <h6>{product.name}</h6>
+              <h6>{product.price}</h6>
+            </Card.Body>
+          </Card>
+        ))}
+      </div>
+      <div className="container">
+        {elevationProductsList.map((product, index) => (
+          <Card
+            style={
+              index === 0 || index === 3
+                ? {
+                    width: "18rem",
+                    display: "inline-block",
+                    margin: 5,
+                  }
+                : {
+                    width: "18rem",
+                    display: "inline-block",
+                    margin: 5,
+                  }
+            }
+          >
+            <Card.Img
+              variant="top"
               style={{
-                display: "flex",
-                alignItems: "center",
+                height: "300px",
               }}
-            >
-              {product.colors.map((color) => (
-                <div
-                  className="numberCircle"
-                  style={{
-                    backgroundColor: color,
-                  }}
-                ></div>
-              ))}
-            </div>
-            <TiShoppingCart
-              style={{
-                float: "right",
-              }}
+              src={product.image}
             />
-            <h6>{product.name}</h6>
-            <h6>{product.price}</h6>
-          </Card.Body>
-        </Card>
-      ))}
-      {elevationProductsList.map((product, index) => (
-        <Card
-          style={
-            index === 0 || index === 3
-              ? {
-                  width: "18rem",
-                  display: "inline-block",
-                  marginRight: "2%",
-                  marginLeft: "20%",
-                }
-              : {
-                  width: "18rem",
-                  display: "inline-block",
-                  marginRight: "2%",
-                  marginBottom: "2%",
-                }
-          }
-        >
-          <Card.Img
-            variant="top"
-            style={{
-              height: "300px",
-            }}
-            src={product.image}
-          />
-          <Card.Body>
-            <div
+            <Card.Body>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                {product.colors.map((color) => (
+                  <div
+                    className="numberCircle"
+                    style={{
+                      backgroundColor: color,
+                    }}
+                  ></div>
+                ))}
+              </div>
+              <TiShoppingCart
+                style={{
+                  float: "right",
+                }}
+              />
+              <h6>{product.name}</h6>
+              <h6>{product.price}</h6>
+            </Card.Body>
+          </Card>
+        ))}
+      </div>
+      <div className="container">
+        {elevationProductsList.map((product, index) => (
+          <Card
+            style={
+              index === 0 || index === 3
+                ? {
+                    width: "18rem",
+                    display: "inline-block",
+                    margin: 5,
+                  }
+                : {
+                    width: "18rem",
+                    display: "inline-block",
+                    margin: 5,
+                  }
+            }
+          >
+            <Card.Img
+              variant="top"
               style={{
-                display: "flex",
-                alignItems: "center",
+                height: "300px",
               }}
-            >
-              {product.colors.map((color) => (
-                <div
-                  className="numberCircle"
-                  style={{
-                    backgroundColor: color,
-                  }}
-                ></div>
-              ))}
-            </div>
-            <TiShoppingCart
-              style={{
-                float: "right",
-              }}
+              src={product.image}
             />
-            <h6>{product.name}</h6>
-            <h6>{product.price}</h6>
-          </Card.Body>
-        </Card>
-      ))}
+            <Card.Body>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                {product.colors.map((color) => (
+                  <div
+                    className="numberCircle"
+                    style={{
+                      backgroundColor: color,
+                    }}
+                  ></div>
+                ))}
+              </div>
+              <TiShoppingCart
+                style={{
+                  float: "right",
+                }}
+              />
+              <h6>{product.name}</h6>
+              <h6>{product.price}</h6>
+            </Card.Body>
+          </Card>
+        ))}
+      </div>
+
       <div className="review-banner">
         <img
           src={quoteBannerImage}
@@ -479,18 +467,15 @@ function App() {
           </p>
         </div>
       </div>
-      <h2 className="elevation-text" >Blogs & Insights</h2>
-      <p
-        style={{
-          textAlign: "center",
-          fontSize: "1rem",
-          color:"#476C67",
-        }}
-      >
+      <h2 className="elevation-text">Blogs & Insights</h2>
+      <p className="blogs-textline">
         Explore Our Blog for Design Inspiration and Tips
       </p>
-
-      <br />
+      {/* <div className="container">
+        {[...Array(3)].map((i) => (
+          <img src={bed} alt="" className="category" />
+        ))}
+      </div> */}
     </>
   );
 }
